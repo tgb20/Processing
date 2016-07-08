@@ -26,18 +26,17 @@ void setup(){
   
   //You then need to draw the circle with ellipse()
   //The values are X, Y, Width, Height
-  //Create a Circle that is in the center of the screen at is 25px away from every edge
-  ellipse(200,200,375,375);
+  //Create a Circle that is in the center of the screen that is 25px away from every edge
+  ellipse(200,200,width-25,height-25);
   //You can draw other shapes with arc(), line(), point(), quad(), rect(), and triangle()
   
   //Now we are going to add two more black circles
   fill(0);
   ellipse(125,125,70,70); 
-  //Even though there are two circles we only have to set the fill once
+  //As long as the color remains the same you do not have to change the fill color
   ellipse(275,125,70,70);
   
   //Now are are going to create an arc
-  //The fill still does not have to be changed
   //The Values are X, Y, Width, Height, Starting Radian, and Ending Radian
   arc(200, 225, 200, 200, 0, PI);
   
