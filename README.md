@@ -5,3 +5,6 @@ Lessons designed for Holyoke Codes but available to anyone
 Learn to setup Processing and then create a little picture!
 
 ![alt tag](https://github.com/tgb20/Processing-Lessons/blob/master/lesson1/result.png)
+
+#Lesson 2
+Create a simple interactive program that randomly changes the backgrounds color
