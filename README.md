@@ -8,3 +8,5 @@ Learn to setup Processing and then create a little picture!
 
 #Lesson 2
 Create a simple interactive program that randomly changes the backgrounds color
+
+![alt tag](https://github.com/tgb20/Processing-Lessons/blob/master/lesson2/result.gif)
