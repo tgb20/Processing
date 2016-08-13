@@ -22,6 +22,8 @@ void setup(){
   //For loops run until i is equal to your modifier
   //This will be our Rectangle Loop
   for (int i=0; i < numOfSquares; i++){
+    //Rotate changes the next shapes rotation. We will set it to the maxSize
+    rotate(maxSize);
     //Once the loop starts we want to set our rectangles to a random color
     fill(random(0,255),random(0,255),random(0,255));
     //We then want to set them to a random position on the screen.
@@ -31,20 +33,23 @@ void setup(){
   }
   //We can copy the loop for each shape and switch out the values
   for (int i=0; i < numOfCircles; i++){
+    rotate(maxSize);
     fill(random(0,255),random(0,255),random(0,255));
     ellipse(random(0,width),random(0,height),random(0,maxSize),random(0,maxSize));  
   }
     for (int i=0; i < numOfTriangles; i++){
-    fill(random(0,255),random(0,255),random(0,255));
-    //Triangles have more values as you have to set each point
-    triangle(random(0,width),random(0,height),random(0,width),random(0,height),random(0,width),random(0,height));
+      rotate(maxSize);
+      fill(random(0,255),random(0,255),random(0,255));
+      //Triangles have more values as you have to set each point
+      triangle(random(0,width),random(0,height),random(0,width),random(0,height),random(0,width),random(0,height));
   }
     for (int i=0; i < numOfLines; i++){
-    //Instead of changing the fill we want to change the stroke
-    stroke(random(0,255),random(0,255),random(0,255));
-    //For lines we have to set how thick we want them to be
-    strokeWeight(maxSize);
-    //Lines are very simple as they just have two points
-    line(random(0,width),random(0,height),random(0,width),random(0,height));
+      rotate(maxSize);
+      //Instead of changing the fill we want to change the stroke
+      stroke(random(0,255),random(0,255),random(0,255));
+      //For lines we have to set how thick we want them to be
+      strokeWeight(maxSize);
+      //Lines are very simple as they just have two points
+      line(random(0,width),random(0,height),random(0,width),random(0,height));
   }
 }
