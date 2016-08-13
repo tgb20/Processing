@@ -12,6 +12,6 @@ Create a simple interactive program that randomly changes the backgrounds color
 ![alt tag](https://github.com/tgb20/Processing-Lessons/blob/master/lesson2/result.gif)
 
 #Lesson 3
-After setting maximum values a random piece of art is generate
+After setting maximum values a random piece of art is generated
 
 ![alt tag](https://github.com/tgb20/Processing-Lessons/blob/master/lesson3/result.png)
