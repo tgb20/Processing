@@ -2,11 +2,11 @@
 
 //Create 4 ints for different shapes
 //We start a variable with a lower case and follow with upper case
-int numOfSquares = 100;
-int numOfCircles = 50;
+int numOfSquares = 5000;
+int numOfCircles = 0 ;
 //Set the number of triangles to a lower number
-int numOfTriangles = 5;
-int numOfLines = 2;
+int numOfTriangles = 0;
+int numOfLines = 0;
 
 //Create a int for the max size
 int maxSize = 60;
