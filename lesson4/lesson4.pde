@@ -7,6 +7,7 @@ Serial myPort;
 //We also need to store the information recieved over serial
 String val;
 
+int valInt;
 //Setup your Project
 void setup(){
   //Set Screen Size to 400x400
@@ -17,7 +18,7 @@ void setup(){
   //We need to setup the serial information
   //First we need to set the port name
   //On windows you use String portName = Serial.list("COM1");
-  String portName = Serial.list()[0];
+  String portName = Serial.list()[3];
   
   //We then need to open the serial connection
   myPort = new Serial(this, portName, 9600); 
@@ -29,24 +30,23 @@ void draw(){
     //If their is data what is in the if statement will run
     //We need to get the information from serial and store it in our val
     //\n means the end of a line
-    val = myPort.readStringUntil('\n');
+    //We also need to trim it as a lot of white space is generated
+    val = myPort.readStringUntil('\n').trim();
+    //Print the information we are getting
+    valInt = int(val);
+    println(valInt);
   }
   //Now we need to do something with the value
   //I am going to make it rotate a square to paint an image
   //Set the sqaures color
-  fill(random(0,255),random(0,255),random(0,255));
-  //We need to make sure it rotates around the center of the screen
-  //We are going to move it to the center for rotation
+  fill(random(0,valInt), random(0,valInt), random(0,valInt));
+  //We need to make sure it is in the center of the screen
   translate(width/2, height/2); 
-  //I want to rotate it around its z Axis by the value I recieve
-  //We are recieving a string but want it as an int so we have to wrap it in int()
-  //We also want it to rotate in degrees so we need to set it to radians()
-  rotate(radians(int(val)));
   //Now we will make our square
   //We are going to set its position to negative half its width and height so it lands in the middle
   rect(-125,-125,250,250);
   //We dont want it to go super fast so we will have a 200ms delay
-  delay(200);
+  delay(500);
 }
 
 //If you run it without the Arduino CounterPart you will recieve a NullPointerException
