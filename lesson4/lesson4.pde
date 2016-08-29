@@ -16,36 +16,28 @@ void setup() {
   // Set the Background to White
   background(255);
 
-  // We need to setup the serial information
+  // We need to setup the serial connection
   // First we need to set the port name
   // On windows you use String portName = Serial.list("COM1");
-  String portName = Serial.list()[3];
+  // You can probably find this in the Arduino IDE
+  // Or the following command may help identify which
+  // Serial port to use:
+  printArray(Serial.list());
+  String portName = Serial.list()[2];
 
   // We then need to open the serial connection
   myPort = new Serial(this, portName, 9600);
+  myPort.bufferUntil('\n');
 }
 void draw() {
-
-  // We need to check if we have a serial connection 
-  // before doing anything
-  if (myPort.available() > 0) {
-    // If Serial connection is available
-    // We need to get the information from serial and store it
-    // \n means the end of a line
-    // Trim removes white space
-    val = myPort.readStringUntil('\n').trim();
-    // Convert the value to an Integer
-    valInt = int(val);
-    // Print the information we are getting
-    println(valInt);
-  }
   // Now we need to do something with the value
-  // I am going to make it rotate a square to 
-  // paint an image
+  // I am going to rotate a square to paint an image
   // Set the squares color
-  fill(random(0, valInt), random(0, valInt), random(0, valInt));
+  fill(map(valInt, 0, 50, 0, 255), 255, 255);
   // We need to make sure it is in the center of the screen
   translate(width/2, height/2); 
+  // Rotate the square based on the distance value
+  rotate(map(valInt, 0, 50, 0, PI));
   // Now we will make our square
   // We are going to set its position to negative 
   // half its width and height so it lands in the middle
@@ -53,6 +45,17 @@ void draw() {
   // We dont want it to go super fast so we 
   // will have a 50ms delay
   delay(50);
+}
+
+void serialEvent(Serial cPort) {
+  // When we get data from the Serial port
+  // update the value that will be used to 
+  // set the color and rotate the square.
+  val = myPort.readStringUntil('\n').trim();
+  // Convert the value to an Integer
+  valInt = int(val);
+  // Print the information we are getting
+  println(valInt);
 }
 
 //If you run it without the Arduino you will recieve a NullPointerException
