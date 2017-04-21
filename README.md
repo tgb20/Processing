@@ -2,20 +2,20 @@
 Lessons designed for Holyoke Codes but available to anyone
 
 # Art
-#Lesson 1
+# Lesson 1
 Learn to setup Processing and then create a little picture!
 
-![alt tag](https://github.com/tgb20/Processing-Lessons/blob/master/lesson1/result.png)
+![alt tag](https://github.com/tgb20/Processing-Lessons/blob/master/Art/lesson1/result.png)
 
-#Lesson 2
+# Lesson 2
 Create a simple interactive program that randomly changes the backgrounds color
 
-![alt tag](https://github.com/tgb20/Processing-Lessons/blob/master/lesson2/result.gif)
+![alt tag](https://github.com/tgb20/Processing-Lessons/blob/master/Art/lesson2/result.gif)
 
-#Lesson 3
+# Lesson 3
 After setting maximum values a random piece of art is generated
 
-![alt tag](https://github.com/tgb20/Processing-Lessons/blob/master/lesson3/result.png)
+![alt tag](https://github.com/tgb20/Processing-Lessons/blob/master/Art/lesson3/result.png)
 
 
 
